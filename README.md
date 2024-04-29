@@ -21,12 +21,11 @@ There are some dependencies present in the `requirements.txt`
 To check a whole folder non-recursively:
 
 ````python
-from pathlib import Path
+from storage import dupelicate
 
-from duplicate import Duplicate
+if __name__ == '__main__':
+    dupelicate.find('path/to/your/folder')
 
-folder = Path('path/to/your/folder')
-Duplicate(folder).similar()
 ````
 
 this will print out the duplicates with a similarity value. In both the `Duplicate` and `Imagehash` class are some 
@@ -36,9 +35,7 @@ values you can change.
 - `max_cores`: Maximum amount of cpu cores the program will use.
 - `size`: the size of the resized image in pixels.
 
-Keep in mind when changing the size of the hex will expand exponentially, change the threshold accordingly. Recommended
-is to keep to 7% of the maximum value, for example a size of 24 would give: 24*24=576 values, with my own testing 40
-seems to be the best threshold for this size (6.94%).
+Keep in mind when changing the size of the hex will expand exponentially, change the threshold accordingly.
 
 
 ## inspiration

@@ -1,7 +1,4 @@
-from pathlib import Path
-
-from duplicate import Duplicate
+from storage import dupelicate
 
 if __name__ == '__main__':
-    folder = Path('path/to/your/folder')
-    Duplicate(folder).similar()
+    dupelicate.find('path/to/your/folder')
